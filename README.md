@@ -99,8 +99,7 @@ https://wireframe.cc/mNyVna
 |August 21| Presentations | Incomplete
 
 ## Priority Matrix
-
-Include a full list of features that have been prioritized based on the `Time and Importance` Matrix.  Link this image in a similar manner to your wireframes
+https://imgur.com/qJd4A37
 
 ## Timeframes
 
