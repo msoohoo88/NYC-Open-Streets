@@ -10,7 +10,6 @@ This allows users to see which restaurants are open for sidewalk/roadside dining
 
 ## API and Data Sample
 API - https://data.cityofnewyork.us/resource/pitm-atqc.json?
-
 Sample JSON:
 ```json
 [
@@ -53,33 +52,43 @@ Sample JSON:
 ]
 ```
 
+API - https://newsapi.org/v2/everything?apiKey=45bbd722e9ed4d88887103aa39f34a4f&q=covid-19
+Sample JSON:
+```json
+{
+    "status": "ok",
+    "totalResults": 462504,
+    "articles": [
+        {
+            "source": {
+                "id": null,
+                "name": "Lifehacker.com"
+            },
+            "author": "Kate Dore on Two Cents, shared by Kate Dore to Lifehacker",
+            "title": "Negotiate With Your Landlord During COVID-19",
+            "description": "As the pandemic stretches on—and lawmakers continue negotiations for the latest stimulus package—experts have warned there may be a looming eviction crisis. Whether your family is suffering from a job loss or a pay cut, now may be the time to start negotiatin…",
+            "url": "https://twocents.lifehacker.com/negotiate-with-your-landlord-during-covid-19-1844623304",
+            "urlToImage": "https://i.kinja-img.com/gawker-media/image/upload/c_fill,f_auto,fl_progressive,g_center,h_675,pg_1,q_80,w_1200/nhxxxfveaezewbdweduk.jpg",
+            "publishedAt": "2020-08-05T20:30:00Z",
+            "content": "As the pandemic stretches onand lawmakers continue negotiations for the latest stimulus packageexperts have warned there may be a looming eviction crisis. Whether your family is suffering from a job … [+1743 chars]"
+        },
+```
+
 ## Wireframes
 
-Upload images of your wireframes to an image hosting site or add them to an assets folder in your repo and link them here with a description of each specific wireframe.
-
-### MVP/PostMVP
-
-The functionality will then be divided into two separate lists: MPV and PostMVP.  Carefully decided what is placed into your MVP as the client will expect this functionality to be implemented upon project completion.  
+https://wireframe.cc/mNyVna
 
 #### MVP 
-*These are examples only. Replace with your own MVP features.*
-
-- Find and use external api 
-- Render data on page 
-- Allow user to choose favorites 
+- Allow user to select their borough
+- Render data on page - includes name, address, if they serve alcohol, and sidewalk or roadway or both dining 
+- Display latest covid-19 news 
 
 #### PostMVP  
-*These are examples only. Replace with your own Post-MVP features.*
-
-- Add second API
-- Use local storage to save user favorites
+- Add more filters such as allowing the user to select area by zipcode
+- Allow user to choose if they want to see only NY COVID-19 news, US COVID-19 news, or global COVID-19 news.
+- Button that drops down to display restaurant reviews
 
 ## Project Schedule
-
-This schedule will be used to keep track of your progress throughout the week and align with our expectations.  
-
-You are **responsible** for scheduling time with your squad to seek approval for each deliverable by the end of the corresponding day, excluding `Saturday` and `Sunday`.
-
 |  Day | Deliverable | Status
 |---|---| ---|
 |August 14-16| Prompt / Wireframes / Priority Matrix / Timeframes | Incomplete
