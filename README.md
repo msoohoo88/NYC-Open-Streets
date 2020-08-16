@@ -80,11 +80,12 @@ https://wireframe.cc/mNyVna
 
 #### MVP 
 - Allow user to select their borough
-- Render data on page - includes name, address, if they serve alcohol, and sidewalk or roadway or both dining 
+- Render data on page - includes name, address, if they serve alcohol, and sidewalk or roadway dining 
+- Display stats of open streets program (total)
 - Display latest covid-19 news 
 
 #### PostMVP  
-- Add more filters such as allowing the user to select area by zipcode
+- Add more filters such as allowing the user to select area by zipcode, by cuisine
 - Allow user to choose if they want to see only NY COVID-19 news, US COVID-19 news, or global COVID-19 news.
 - Button that drops down to display restaurant reviews
 
@@ -105,13 +106,19 @@ https://imgur.com/qJd4A37
 
 | Component | Priority | Estimated Time | Time Invested | Actual Time |
 | --- | :---: |  :---: | :---: | :---: |
-| Setting up structure | M | 1hrs|  |  |
-| Setting up user filters | H | 3hrs|  |  |
-| Rendering of resturants | H | 4hrs|  |  |
-| CSS styling of rendered resturants | L | 4hrs|  |  |
-| Rednering of latest COVID-19 news | H | 3hrs|  |  |
-| CSS styling of news section | L | 4hrs|  |  |
+| Setting up basic structure | M | 1.5hrs|  |  |
+| Setting up user filters | H | 2hrs|  |  |
+| Render resturants info - name and address| H | 3hrs|  |  |
+| Render resturants info - other info| H | 2.5hrs|  |  |
+| Render stats of restaurants with sidewalk dining| M | 1.5hrs|  |  |
+| Render stats of restaurants with roadway dining| M | 1.5hrs|  |  |
+| Render latest COVID-19 news | H | 3hrs|  |  |
+| Render latest COVID-19 stats | H | 2.5hrs|  |  |
+| CSS styling of rendered resturants info| L | 3hrs|  |  |
+| CSS styling of stats| L | 3hrs|  |  |
+| CSS styling of news section | L | 3hrs|  |  |
 | CSS for desktop| L | 2hrs|  |  |
+| Styling for header| L | 1.5hrs|  |  |
 | Total | H | 30hrs|  |  |
 
 ## Code Snippet
