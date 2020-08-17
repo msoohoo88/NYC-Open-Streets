@@ -5,8 +5,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>NYC Open Streets</title>
-  <script defer src="./app.js"></script>
   <link rel="stylesheet" href="styles.css">
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  <script defer src="./app.js"></script>
 </head>
 
 <body>
@@ -27,7 +28,11 @@
       </form>
     </section>
 
-    <section class='restaurantsInBorough'></section>
+    <section class='restaurantsInBorough'>
+      <div class='food-names'>
+      </div>
+    </section>
+
     <section class='covidNews'></section>
   </main>
 
