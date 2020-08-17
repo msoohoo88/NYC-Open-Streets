@@ -6,7 +6,7 @@ NYC Open Streets
 
 ## Project Description
 
-This allows users to see which restaurants are open for sidewalk/roadside dining in their neighborhoods. It will also display the latest in COVID-19 news.
+This allows users to see which restaurants are open for sidewalk/roadside dining in their selected neighborhoods. It will also display the latest in COVID-19 news.
 
 ## API and Data Sample
 API - https://data.cityofnewyork.us/resource/pitm-atqc.json?
@@ -85,7 +85,7 @@ https://wireframe.cc/mNyVna
 - Display latest covid-19 news 
 
 #### PostMVP  
-- Add more filters such as allowing the user to select area by zipcode, by cuisine
+- Add more filters such as allowing the user to select area by cuisine
 - Allow user to choose if they want to see only NY COVID-19 news, US COVID-19 news, or global COVID-19 news.
 - Button that drops down to display restaurant reviews
 
