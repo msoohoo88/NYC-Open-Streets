@@ -10,6 +10,7 @@ This allows users to see which restaurants are open for sidewalk/roadside dining
 
 ## API and Data Sample
 API - https://data.cityofnewyork.us/resource/pitm-atqc.json?
+
 Sample JSON:
 ```json
 [
@@ -53,6 +54,7 @@ Sample JSON:
 ```
 
 API - https://newsapi.org/v2/everything?apiKey=45bbd722e9ed4d88887103aa39f34a4f&q=covid-19
+
 Sample JSON:
 ```json
 {
