@@ -102,7 +102,7 @@ https://wireframe.cc/mNyVna
 |August 21| Presentations | Incomplete
 
 ## Priority Matrix
-https://imgur.com/qJd4A37
+https://res.cloudinary.com/dmsgyhmxo/image/upload/v1597669351/priority_nlnoey.png
 
 ## Timeframes
 
