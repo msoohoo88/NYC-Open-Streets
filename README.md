@@ -90,6 +90,7 @@ https://wireframe.cc/mNyVna
 - Add more filters such as allowing the user to select area by cuisine
 - Allow user to choose if they want to see only NY COVID-19 news, US COVID-19 news, or global COVID-19 news.
 - Button that drops down to display restaurant reviews
+- Add map location of selected restaurant
 
 ## Project Schedule
 |  Day | Deliverable | Status
