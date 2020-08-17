@@ -96,14 +96,14 @@ https://wireframe.cc/mNyVna
 |  Day | Deliverable | Status
 |---|---| ---|
 |August 14-16| Prompt / Wireframes / Priority Matrix / Timeframes | Incomplete
-|August 17| Project Approval | Incomplete
-|August 18| Core Application Structure (HTML, CSS, etc.) | Incomplete
-|August 19| Initial Clickable Model  | Incomplete
-|August 20| MVP | Incomplete
-|August 21| Presentations | Incomplete
+|August 17| Project Approval, Basic structure and user filter set up, Checking functionality | Incomplete
+|August 18| API retrieval of restaurant data & stats of open street dining, CSS styling, Continued checking of functionality | Incomplete
+|August 19| Continuation of CSS styling, API retrieval of COVID-19 news, CSS styling, Continued checking of functionality | Incomplete
+|August 20| Finalizing CSS styling and triple checking for functionality| Incomplete
+|August 21| Pushing app live, Presentations | Incomplete
 
 ## Priority Matrix
-https://res.cloudinary.com/dmsgyhmxo/image/upload/v1597669351/priority_nlnoey.png
+https://res.cloudinary.com/dmsgyhmxo/image/upload/v1597679422/Priority_Matrix_Project_1.png
 
 ## Timeframes
 
