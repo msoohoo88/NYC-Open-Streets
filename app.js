@@ -60,7 +60,6 @@ const getRestaurantData = async (borough) => {
       }
     }
 
-    removeLastBoroughList()
 
   } catch (error) {
     console.log(`Error; ${error}`)
@@ -71,50 +70,48 @@ const getRestaurantData = async (borough) => {
 const userChoice = document.querySelector('#borough-list')
 userChoice.addEventListener('change', (e) => {
   const boroughSelection = e.target.value
-  console.log(boroughSelection)
   getRestaurantData(boroughSelection)
+  removeLastBoroughList()
 });
 
 // Remove last user selection
 const removeLastBoroughList = () => {
   const removeRestaurants = document.querySelector('.restaurants-in-borough')
-  while (removeRestaurants.lastElementChild) {
-    removeRestaurants.remove(removeRestaurants.lastElementChild)
+  while (removeRestaurants.lastChild) {
+    removeRestaurants.removeChild(removeRestaurants.lastChild)
   }
 }
 
 
+// Getting the latest COVID - 19 news
+const getCovidNews = async () => {
+  try {
 
-// Getting the latest COVID-19 news
-// const getCovidNews = async () => {
-//   try {
+    // This is taken from https://github.com/Rob--W/cors-anywhere/#documentation
+    const covidNewsUrl = (function () {
+      var cors_api_host = 'cors-anywhere.herokuapp.com';
+      var cors_api_url = 'https://' + cors_api_host + '/' + 'https://newsapi.org/v2/everything?apiKey=45bbd722e9ed4d88887103aa39f34a4f&q=covid-19';
+      var slice = [].slice;
+      var origin = window.location.protocol + '//' + window.location.host;
+      var open = XMLHttpRequest.prototype.open;
+      XMLHttpRequest.prototype.open = function () {
+        var args = slice.call(arguments);
+        var targetOrigin = /^https?:\/\/([^\/]+)/i.exec(args[1]);
+        if (targetOrigin && targetOrigin[0].toLowerCase() !== origin &&
+          targetOrigin[1] !== cors_api_host) {
+          args[1] = cors_api_url + args[1];
+        }
+        return open.apply(this, args);
+      };
+    })();
 
-//     // This is taken from https://github.com/Rob--W/cors-anywhere/#documentation
-//     const covidNewsUrl = (function () {
-//       var cors_api_host = 'cors-anywhere.herokuapp.com';
-//       var cors_api_url = 'https://' + cors_api_host + '/' + 'https://newsapi.org/v2/everything?apiKey=45bbd722e9ed4d88887103aa39f34a4f&q=covid-19';
-//       var slice = [].slice;
-//       var origin = window.location.protocol + '//' + window.location.host;
-//       var open = XMLHttpRequest.prototype.open;
-//       XMLHttpRequest.prototype.open = function () {
-//         var args = slice.call(arguments);
-//         var targetOrigin = /^https?:\/\/([^\/]+)/i.exec(args[1]);
-//         if (targetOrigin && targetOrigin[0].toLowerCase() !== origin &&
-//           targetOrigin[1] !== cors_api_host) {
-//           args[1] = cors_api_url + args[1];
-//         }
-//         return open.apply(this, args);
-//       };
-//     })();
-//     console.log(covidNewsUrl)
+    // Making call to the News API for articles
+    // const response = await axios.get(covidNewsUrl)
+    // console.log(response)
 
-//     // Making call to the News API for articles
-//     // const response = await axios.get(covidNewsUrl)
-//     // console.log(response)
+  } catch (error) {
+    console.log(`Error; ${error}`)
+  }
+}
 
-//   } catch (error) {
-//     console.log(`Error; ${error}`)
-//   }
-// }
-
-// getCovidNews()
+getCovidNews()
