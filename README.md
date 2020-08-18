@@ -95,7 +95,7 @@ https://wireframe.cc/mNyVna
 ## Project Schedule
 |  Day | Deliverable | Status
 |---|---| ---|
-|August 14-16| Prompt / Wireframes / Priority Matrix / Timeframes | Incomplete
+|August 14-16| Prompt / Wireframes / Priority Matrix / Timeframes | Complete
 |August 17| Project Approval, Basic structure and user filter set up, Checking functionality | Incomplete
 |August 18| API retrieval of restaurant data & stats of open street dining, CSS styling, Continued checking of functionality | Incomplete
 |August 19| Continuation of CSS styling, API retrieval of COVID-19 news, CSS styling, Continued checking of functionality | Incomplete
@@ -109,8 +109,8 @@ https://res.cloudinary.com/dmsgyhmxo/image/upload/v1597679422/Priority_Matrix_Pr
 
 | Component | Priority | Estimated Time | Time Invested | Actual Time |
 | --- | :---: |  :---: | :---: | :---: |
-| Setting up basic structure | M | 1.5hrs|  |  |
-| Setting up user filters | H | 2hrs|  |  |
+| Setting up basic structure | M | 1.5hrs| 1hr | 1hr |
+| Setting up user filters | H | 2hrs| 2hrs |  |
 | Render resturants info - name and address| H | 3hrs|  |  |
 | Render resturants info - other info| H | 2.5hrs|  |  |
 | Render stats of restaurants with sidewalk dining| M | 1.5hrs|  |  |
@@ -135,4 +135,7 @@ function reverse(string) {
 ```
 
 ## Change Log
- Use this section to document what changes were made and the reasoning behind those changes.  
+Use this section to document what changes were made and the reasoning behind those changes.  
+
+## Issues
+corsNotAllowed in newsAPI
