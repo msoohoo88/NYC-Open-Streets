@@ -11,24 +11,28 @@
 </head>
 
 <body>
-  <header></header>
+  <header>
+    <div class='app-header'>
+      <h1>NYC OPEN STREETS</h1>
+    </div>
+  </header>
 
   <main>
-    <section class='userFilters'>
-      <form>
+    <section class='user-filters'>
+      <form id='user-filter-choice'>
         <p>Please select your borough:</p>
-        <select class='borough-list'>
+        <select id='borough-list'>
           <option value='na'>---</option>
-          <option value='bx'>Bronx</option>
-          <option value='bk'>Brooklyn</option>
-          <option value='man'>Manhattan</option>
-          <option value='qu'>Queens</option>
-          <option value='si'>Staten Island</option>
+          <option value='Bronx'>Bronx</option>
+          <option value='Brooklyn'>Brooklyn</option>
+          <option value='Manhattan'>Manhattan</option>
+          <option value='Queens'>Queens</option>
+          <option value='Staten Island'>Staten Island</option>
         </select>
       </form>
     </section>
 
-    <section class='restaurantsInBorough'>
+    <section class='restaurants-in-borough'>
     </section>
 
     <section class='covid-news'></section>
