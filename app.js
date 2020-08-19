@@ -8,7 +8,7 @@ const getRestaurantData = async (borough) => {
     const newsUrl = 'http://cors-anywhere.herokuapp.com/https://newsapi.org/v2/everything?apiKey=45bbd722e9ed4d88887103aa39f34a4f&q=covid-19'
 
     const responseNewsUrl = await axios.get(newsUrl)
-    console.log(responseNewsUrl.data)
+    console.log(responseNewsUrl.data.articles)
 
     // Creating div that will hold news articles
     const covidNews = document.querySelector('.covid-news')
@@ -17,6 +17,19 @@ const getRestaurantData = async (borough) => {
       covidNews.append(covidSection)
     }
 
+    const covidNewsDiv = document.querySelectorAll('.covid-news > div')
+    console.log(covidNewsDiv)
+    for (let i = 0; i < 4; i++) {
+      const articleImg = document.createElement('img')
+      articleImg.src = responseNewsUrl.data.articles[i].urlToImage
+      covidNewsDiv[i].append(articleImg)
+
+      const articleLink = document.createElement('a')
+      articleLink.href = responseNewsUrl.data.articles[i].url
+      articleLink.innerText = responseNewsUrl.data.articles[i].title
+
+      covidNewsDiv[i].append(articleLink)
+    }
 
 
     // Making call to the NYC Open Data - Open Streets Program
