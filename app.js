@@ -1,14 +1,10 @@
-const restaurantURL = 'https://data.cityofnewyork.us/resource/pitm-atqc.json?borough='
-const newsURL = 'https://newsapi.org/v2/everything?apiKey=45bbd722e9ed4d88887103aa39f34a4f&q=covid-19'
+const restaurantURL = 'https://data.cityofnewyork.us/resource/pitm-atqc.json'
+const newsUrl = 'http://cors-anywhere.herokuapp.com/https://newsapi.org/v2/everything?apiKey=45bbd722e9ed4d88887103aa39f34a4f&q=covid-19'
 
 const getRestaurantData = async (borough) => {
   try {
-
-    // This is taken from https://github.com/Rob--W/cors-anywhere/#documentation and help from Raul
-    const newsUrl = 'http://cors-anywhere.herokuapp.com/https://newsapi.org/v2/everything?apiKey=45bbd722e9ed4d88887103aa39f34a4f&q=covid-19'
-
+    // Call to News API
     const responseNewsUrl = await axios.get(newsUrl)
-    console.log(responseNewsUrl.data.articles)
 
     // Creating div that will hold news articles
     const covidNews = document.querySelector('.covid-news')
@@ -17,27 +13,26 @@ const getRestaurantData = async (borough) => {
       covidNews.append(covidSection)
     }
 
+    // This section is creating tags and appending them for the article url's and images
     const covidNewsDiv = document.querySelectorAll('.covid-news > div')
-    console.log(covidNewsDiv)
     for (let i = 0; i < 4; i++) {
+      // Creating img tags and appending
       const articleImg = document.createElement('img')
       articleImg.src = responseNewsUrl.data.articles[i].urlToImage
       covidNewsDiv[i].append(articleImg)
 
+      // Creating article url and appending
       const articleLink = document.createElement('a')
       articleLink.href = responseNewsUrl.data.articles[i].url
       articleLink.innerText = responseNewsUrl.data.articles[i].title
-
       covidNewsDiv[i].append(articleLink)
     }
 
-
     // Making call to the NYC Open Data - Open Streets Program
-    const response = await axios.get(restaurantURL + borough)
+    const response = await axios.get(`${restaurantURL}?borough=${borough}`)
 
     // Creating div that will hold restaurant data
     const mainRestaurantDiv = document.querySelector('.restaurants-in-borough')
-
     for (let i = 0; i <= 10; i++) {
       const divSection = document.createElement('div')
       mainRestaurantDiv.append(divSection)
@@ -89,6 +84,38 @@ const getRestaurantData = async (borough) => {
       }
     }
 
+    // Creating div that will hold total numbers data
+    const totalNumberDiv = document.querySelector('.number-of-restaurants')
+    const totalDivSection = document.createElement('div')
+    totalNumberDiv.append(totalDivSection)
+
+    // This section is creating tags and appending them for the restaurants total numbers
+    const totalBoroughNumberDiv = document.querySelector('.number-of-restaurants > div')
+    const yesRoadwayArr = []
+    const yesSidewalkArr = []
+    const sideAndRoadArr = []
+    for (let i = 0; i < response.data.length; i++) {
+      const stats = response.data[i]
+      if (stats.approved_for_roadway_seating === "yes") {
+        yesRoadwayArr.push(stats.approved_for_roadway_seating)
+      }
+      if (stats.approved_for_sidewalk_seating === "yes") {
+        yesSidewalkArr.push(stats.approved_for_sidewalk_seating)
+      }
+      if (stats.approved_for_roadway_seating === "yes" && stats.approved_for_sidewalk_seating === "yes") {
+        sideAndRoadArr.push('both')
+      }
+    }
+    const roadwayStats = document.createElement('p')
+    const sidewalkStats = document.createElement('p')
+    const roadwayAndSidewalkStats = document.createElement('p')
+
+    roadwayStats.textContent = `# of restaurants offering roadway dining: ${yesRoadwayArr.length}`
+    totalBoroughNumberDiv.append(roadwayStats)
+    sidewalkStats.textContent = `# of restaurants offering sidewalk dining: ${yesSidewalkArr.length}`
+    totalBoroughNumberDiv.append(sidewalkStats)
+    roadwayAndSidewalkStats.textContent = `# of restaurants offering sidewalk and roadway dining: ${sideAndRoadArr.length}`
+    totalBoroughNumberDiv.append(roadwayAndSidewalkStats)
 
   } catch (error) {
     console.log(`Error; ${error}`)
@@ -96,17 +123,24 @@ const getRestaurantData = async (borough) => {
 }
 
 // User Borough Selection
-const userChoice = document.querySelector('#borough-list')
-userChoice.addEventListener('change', (e) => {
+const userBorough = document.querySelector('#borough-list')
+userBorough.addEventListener('change', (e) => {
   const boroughSelection = e.target.value
   getRestaurantData(boroughSelection)
-  removeLastBoroughList()
+  removeLastSelections()
 });
 
-// Remove last user selection
-const removeLastBoroughList = () => {
+// Remove last selections
+const removeLastSelections = () => {
+  // Removing Restaurants
   const removeRestaurants = document.querySelector('.restaurants-in-borough')
   while (removeRestaurants.lastChild) {
     removeRestaurants.removeChild(removeRestaurants.lastChild)
+  }
+
+  // Removing Stats
+  const removeStats = document.querySelector('.number-of-restaurants')
+  while (removeStats.lastChild) {
+    removeStats.removeChild(removeStats.lastChild)
   }
 }
