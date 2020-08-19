@@ -143,4 +143,10 @@ const removeLastSelections = () => {
   while (removeStats.lastChild) {
     removeStats.removeChild(removeStats.lastChild)
   }
+
+  // Removing News Articles
+  const removeNews = document.querySelector('.covid-news')
+  while (removeNews.lastChild) {
+    removeNews.removeChild(removeNews.lastChild)
+  }
 }
