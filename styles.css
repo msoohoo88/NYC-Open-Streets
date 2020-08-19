@@ -1,7 +1,10 @@
+body {
+  background-color: #f5f5f5;
+}
+
 .app-header {
     position: relative;
     text-align: center;
-    /* color: white; */
   }
 
 .app-header > img {
@@ -10,14 +13,11 @@
 
 .webAppName {
   position: absolute;
-  bottom: 200px;
-  right: 0px;
-  /* background: linear-gradient(90deg, rgba(255,255,255,1), rgba(255,255,255,0.3)); */
-  background: #FFFFFF;
-  opacity: 0.5;
+  bottom: 40%;
+  /* Created with https://cssgradient.io/*/
+  background: linear-gradient(90deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0.7) 50%, rgba(255,255,255,0.1) 100%);
   width: 100%;
-  font-size: 5vw;
-  text-align: center;
+  font-size: 7vw;
 }
 
 .webAppName > p {
@@ -35,7 +35,7 @@
 
 #user-filter-choice{
   position: relative;
-  margin-top: 20px;
+  margin: 20px 0px;
   width: 100%;
 }
 
@@ -45,4 +45,91 @@
   font-size: 4vw;
   border-radius: 7px;
   padding-left: 15px;
+}
+
+.restaurant-name {
+  font-size: 7vw;
+}
+
+.restaurants-in-borough > div {
+  background-color: rgba(224,222,222,0.3);
+  border-radius: 5px;
+  margin-bottom: 20px;
+  padding-left: 15px;
+  border: solid 1px;
+}
+
+.restaurants-in-borough{
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: stretch;
+}
+
+.number-of-restaurants{
+  width: 100%;
+}
+
+.number-of-restaurants > div {
+  background-color: rgba(224,222,222,0.3);
+  border-radius: 5px;
+  margin-bottom: 20px;
+  padding-left: 15px;
+  border: solid 1px;
+}
+
+.covid-news {
+  display: flex;
+  flex-flow: column nowrap;
+}
+
+.covid-news > div {
+  margin-bottom: 20px;
+}
+
+.covid-news > div > img {
+  max-width: 100%;
+}
+
+@media only screen and (min-width: 600px) {
+  .main-container {
+    align-items: stretch;
+  }
+
+  .user-filters {
+    align-items: center;
+  }
+
+  #borough-list {
+    height: 4vw;
+    width: 40vw;
+    font-size: 2vw;
+    border-radius: 5px;
+    padding-left: 10px;
+    margin-left: 30%;
+  }
+
+  .restaurant-name {
+    font-size: 3vw;
+  }
+
+  .covid-news {
+    display: flex;
+    flex-flow: row;
+  }
+  
+  .covid-news > div {
+    margin-bottom: 20px;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+  }
+  
+  .covid-news > div > img {
+    max-width: 75%;
+  }
+
+  .covid-news > div > a {
+    display: inline-block;
+    max-width: 75%;
+  }
 }

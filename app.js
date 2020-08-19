@@ -110,11 +110,11 @@ const getRestaurantData = async (borough) => {
     const sidewalkStats = document.createElement('p')
     const roadwayAndSidewalkStats = document.createElement('p')
 
-    roadwayStats.textContent = `# of restaurants offering roadway dining: ${yesRoadwayArr.length}`
+    roadwayStats.textContent = `Number of restaurants offering roadway dining: ${yesRoadwayArr.length}`
     totalBoroughNumberDiv.append(roadwayStats)
-    sidewalkStats.textContent = `# of restaurants offering sidewalk dining: ${yesSidewalkArr.length}`
+    sidewalkStats.textContent = `Number of restaurants offering sidewalk dining: ${yesSidewalkArr.length}`
     totalBoroughNumberDiv.append(sidewalkStats)
-    roadwayAndSidewalkStats.textContent = `# of restaurants offering sidewalk and roadway dining: ${sideAndRoadArr.length}`
+    roadwayAndSidewalkStats.textContent = `Total restaurants offering sidewalk and roadway dining: ${sideAndRoadArr.length}`
     totalBoroughNumberDiv.append(roadwayAndSidewalkStats)
 
   } catch (error) {
