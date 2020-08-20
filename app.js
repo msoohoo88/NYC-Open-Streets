@@ -6,6 +6,7 @@ const getNewsArticles = async () => {
   try {
     // Call to News API
     const responseNewsUrl = await axios.get(newsUrl)
+    console.log(responseNewsUrl.data.articles)
 
     // Creating div that will hold news articles
     const covidNews = document.querySelector('.covid-news')
@@ -17,15 +18,19 @@ const getNewsArticles = async () => {
     // This section is creating tags and appending them for the article url's and images
     const covidNewsDiv = document.querySelectorAll('.covid-news > div')
     for (let i = 0; i < 4; i++) {
+      // Getting random news article
+      const ranNewsObj = responseNewsUrl.data.articles[Math.floor(Math.random() * responseNewsUrl.data.articles.length)];
+      console.log(ranNewsObj)
+
       // Creating img tags and appending
       const articleImg = document.createElement('img')
-      articleImg.src = responseNewsUrl.data.articles[i].urlToImage
+      articleImg.src = ranNewsObj.urlToImage
       covidNewsDiv[i].append(articleImg)
 
       // Creating article url and appending
       const articleLink = document.createElement('a')
-      articleLink.href = responseNewsUrl.data.articles[i].url
-      articleLink.innerText = responseNewsUrl.data.articles[i].title
+      articleLink.href = ranNewsObj.url
+      articleLink.innerText = ranNewsObj.title
       covidNewsDiv[i].append(articleLink)
     }
 
@@ -52,6 +57,9 @@ const getRestaurantData = async (borough) => {
     // This section is creating tags and appending them for the restaurants data
     const mainRestaurantNameDiv = document.querySelectorAll('.restaurants-in-borough > div')
     for (let i = 0; i < 10; i++) {
+      // Getting random object in array based on user borough choice
+      const ranRestObj = response.data[Math.floor(Math.random() * response.data.length)];
+
       // Creating p tags for data
       const nameOfRestaurant = document.createElement('p')
       const businessAddress = document.createElement('p')
@@ -59,17 +67,17 @@ const getRestaurantData = async (borough) => {
       const typeOfSeating = document.createElement('p')
 
       // Appending restaurant name and class
-      nameOfRestaurant.textContent = response.data[i].restaurant_name
+      nameOfRestaurant.textContent = ranRestObj.restaurant_name
       mainRestaurantNameDiv[i].append(nameOfRestaurant)
       nameOfRestaurant.classList.add("restaurant-name");
 
       // Appending restaurant address and class
-      businessAddress.textContent = response.data[i].business_address
+      businessAddress.textContent = ranRestObj.business_address
       mainRestaurantNameDiv[i].append(businessAddress)
       businessAddress.classList.add("restaurant-data");
 
       // Appending if the restaurant serves alcohol and appending class
-      if (response.data[i].qualify_alcohol === 'yes') {
+      if (ranRestObj.qualify_alcohol === 'yes') {
         servesAlcohol.textContent = "Serves alcohol: Yes"
         mainRestaurantNameDiv[i].append(servesAlcohol)
         servesAlcohol.classList.add("restaurant-data");
@@ -80,11 +88,11 @@ const getRestaurantData = async (borough) => {
       }
 
       // Appending what type of outdoor dining is available and appending class
-      if (response.data[i].approved_for_roadway_seating === "yes" && response.data[i].approved_for_sidewalk_seating === "yes") {
+      if (ranRestObj.approved_for_roadway_seating === "yes" && ranRestObj.approved_for_sidewalk_seating === "yes") {
         typeOfSeating.textContent = "Sidewalk and roadway seating available"
         mainRestaurantNameDiv[i].append(typeOfSeating)
         typeOfSeating.classList.add("restaurant-data");
-      } else if (response.data[i].approved_for_roadway_seating === "yes" && response.data[i].approved_for_sidewalk_seating === "no") {
+      } else if (ranRestObj.approved_for_roadway_seating === "yes" && ranRestObj.approved_for_sidewalk_seating === "no") {
         typeOfSeating.textContent = "Only roadway seating available"
         mainRestaurantNameDiv[i].append(typeOfSeating)
         typeOfSeating.classList.add("restaurant-data");
