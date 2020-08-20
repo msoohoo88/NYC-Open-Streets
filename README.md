@@ -111,7 +111,7 @@ https://res.cloudinary.com/dmsgyhmxo/image/upload/v1597679422/Priority_Matrix_Pr
 | --- | :---: |  :---: | :---: | :---: |
 | Setting up basic structure | M | 1.5hrs| 1hr | 1hr |
 | Setting up user filters | H | 2hrs| 2hrs |  |
-| Render resturants info - name and address| H | 3hrs| 5hrs |  |
+| Render resturants info - name and address| H | 3hrs| 8hrs |  |
 | Render resturants info - other info| H | 2.5hrs| 2.5hrs |  |
 | Render stats of restaurants with sidewalk dining| M | 1.5hrs| 2.5hrs |  |
 | Render stats of restaurants with roadway dining| M | 1.5hrs| .5hrs |  |
@@ -135,4 +135,4 @@ function reverse(string) {
 ```
 
 ## Change Log
-Use this section to document what changes were made and the reasoning behind those changes.  
+User will see a set of random restaurants
