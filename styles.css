@@ -23,6 +23,7 @@ body {
 .webAppName > p {
   line-height: 5px;
   padding-left: 10px;
+  font-family: 'Oswald', sans-serif;
 }
 
 .main-container {
@@ -48,7 +49,7 @@ body {
 }
 
 .restaurant-name {
-  font-size: 7vw;
+  font-size: 6vw;
 }
 
 .restaurants-in-borough > div {
@@ -57,6 +58,11 @@ body {
   margin-bottom: 20px;
   padding-left: 15px;
   border: solid 1px;
+  font-family: 'Hind Siliguri', sans-serif;
+}
+
+.business-address, .serves-alcohol, .seating-type {
+  font-size: 4vw
 }
 
 .restaurants-in-borough{
@@ -75,6 +81,7 @@ body {
   margin-bottom: 20px;
   padding-left: 15px;
   border: solid 1px;
+  font-family: 'Hind Siliguri', sans-serif;
 }
 
 .covid-news {
@@ -109,7 +116,7 @@ body {
   }
 
   .restaurant-name {
-    font-size: 3vw;
+    font-size: 2vw;
   }
 
   .covid-news {
@@ -131,5 +138,13 @@ body {
   .covid-news > div > a {
     display: inline-block;
     max-width: 75%;
+    font-size: 1.4vw;
+  }
+
+  .business-address, .serves-alcohol, .seating-type {
+    font-size: 1.5vw
+  }
+  .number-of-restaurants > div > p{
+    font-size: 1.4vw
   }
 }
