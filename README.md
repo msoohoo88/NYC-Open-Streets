@@ -96,10 +96,10 @@ https://wireframe.cc/mNyVna
 |  Day | Deliverable | Status
 |---|---| ---|
 |August 14-16| Prompt / Wireframes / Priority Matrix / Timeframes | Complete
-|August 17| Project Approval, Basic structure and user filter set up, Checking functionality | Incomplete
-|August 18| API retrieval of restaurant data & stats of open street dining, CSS styling, Continued checking of functionality | Incomplete
-|August 19| Continuation of CSS styling, API retrieval of COVID-19 news, CSS styling, Continued checking of functionality | Incomplete
-|August 20| Finalizing CSS styling and triple checking for functionality| Incomplete
+|August 17| Project Approval, Basic structure and user filter set up, Checking functionality | Complete
+|August 18| API retrieval of restaurant data & stats of open street dining, CSS styling, Continued checking of functionality | Complete
+|August 19| Continuation of CSS styling, API retrieval of COVID-19 news, CSS styling, Continued checking of functionality | Complete
+|August 20| Finalizing CSS styling and triple checking for functionality| Complete
 |August 21| Pushing app live, Presentations | Incomplete
 
 ## Priority Matrix
@@ -111,17 +111,17 @@ https://res.cloudinary.com/dmsgyhmxo/image/upload/v1597679422/Priority_Matrix_Pr
 | --- | :---: |  :---: | :---: | :---: |
 | Setting up basic structure | M | 1.5hrs| 1hr | 1hr |
 | Setting up user filters | H | 2hrs| 2hrs |  |
-| Render resturants info - name and address| H | 3hrs|  |  |
-| Render resturants info - other info| H | 2.5hrs|  |  |
-| Render stats of restaurants with sidewalk dining| M | 1.5hrs|  |  |
-| Render stats of restaurants with roadway dining| M | 1.5hrs|  |  |
-| Render latest COVID-19 news | H | 3hrs|  |  |
+| Render resturants info - name and address| H | 3hrs| 5hrs |  |
+| Render resturants info - other info| H | 2.5hrs| 2.5hrs |  |
+| Render stats of restaurants with sidewalk dining| M | 1.5hrs| 2.5hrs |  |
+| Render stats of restaurants with roadway dining| M | 1.5hrs| .5hrs |  |
+| Render latest COVID-19 news | H | 3hrs| 2hrs |  |
 | Render latest COVID-19 stats | H | 2.5hrs|  |  |
-| CSS styling of rendered resturants info| L | 3hrs|  |  |
-| CSS styling of stats| L | 3hrs|  |  |
-| CSS styling of news section | L | 3hrs|  |  |
-| CSS for desktop| L | 2hrs|  |  |
-| Styling for header| L | 1.5hrs|  |  |
+| CSS styling of rendered resturants info| L | 3hrs| 6.5hrs |  |
+| CSS styling of stats| L | 3hrs| 2hr |  |
+| CSS styling of news section | L | 3hrs| 2hrs |  |
+| CSS for desktop| L | 2hrs| 1hr |  |
+| Styling for header| L | 1.5hrs| 1hr |  |
 | Total | H | 30hrs|  |  |
 
 ## Code Snippet
@@ -136,6 +136,3 @@ function reverse(string) {
 
 ## Change Log
 Use this section to document what changes were made and the reasoning behind those changes.  
-
-## Issues
-corsNotAllowed in newsAPI
