@@ -1,7 +1,8 @@
 const restaurantURL = 'https://data.cityofnewyork.us/resource/pitm-atqc.json'
 const newsUrl = 'http://cors-anywhere.herokuapp.com/https://newsapi.org/v2/everything?apiKey=45bbd722e9ed4d88887103aa39f34a4f&q=covid-19'
 
-const getRestaurantData = async (borough) => {
+// Making the request to News API, appending to news section of HTML
+const getNewsArticles = async () => {
   try {
     // Call to News API
     const responseNewsUrl = await axios.get(newsUrl)
@@ -28,19 +29,29 @@ const getRestaurantData = async (borough) => {
       covidNewsDiv[i].append(articleLink)
     }
 
-    // Making call to the NYC Open Data - Open Streets Program
+  } catch (error) {
+    console.log(`Error; ${error}`)
+  }
+
+}
+getNewsArticles()
+// Making the request to NYC Open Data, appending to news section of HTML
+const getRestaurantData = async (borough) => {
+
+  try {
+    // Call to the NYC Open Data - Open Streets Program
     const response = await axios.get(`${restaurantURL}?borough=${borough}`)
 
     // Creating div that will hold restaurant data
     const mainRestaurantDiv = document.querySelector('.restaurants-in-borough')
-    for (let i = 0; i <= 10; i++) {
+    for (let i = 0; i < 10; i++) {
       const divSection = document.createElement('div')
       mainRestaurantDiv.append(divSection)
     }
 
     // This section is creating tags and appending them for the restaurants data
     const mainRestaurantNameDiv = document.querySelectorAll('.restaurants-in-borough > div')
-    for (let i = 0; i <= 10; i++) {
+    for (let i = 0; i < 10; i++) {
       // Creating p tags for data
       const nameOfRestaurant = document.createElement('p')
       const businessAddress = document.createElement('p')
@@ -55,32 +66,32 @@ const getRestaurantData = async (borough) => {
       // Appending restaurant address and class
       businessAddress.textContent = response.data[i].business_address
       mainRestaurantNameDiv[i].append(businessAddress)
-      businessAddress.classList.add("business-address");
+      businessAddress.classList.add("restaurant-data");
 
       // Appending if the restaurant serves alcohol and appending class
       if (response.data[i].qualify_alcohol === 'yes') {
         servesAlcohol.textContent = "Serves alcohol: Yes"
         mainRestaurantNameDiv[i].append(servesAlcohol)
-        servesAlcohol.classList.add("serves-alcohol");
+        servesAlcohol.classList.add("restaurant-data");
       } else {
         servesAlcohol.textContent = "Serves alcohol: No"
         mainRestaurantNameDiv[i].append(servesAlcohol)
-        servesAlcohol.classList.add("serves-alcohol");
+        servesAlcohol.classList.add("restaurant-data");
       }
 
       // Appending what type of outdoor dining is available and appending class
       if (response.data[i].approved_for_roadway_seating === "yes" && response.data[i].approved_for_sidewalk_seating === "yes") {
         typeOfSeating.textContent = "Sidewalk and roadway seating available"
         mainRestaurantNameDiv[i].append(typeOfSeating)
-        typeOfSeating.classList.add("seating-type");
+        typeOfSeating.classList.add("restaurant-data");
       } else if (response.data[i].approved_for_roadway_seating === "yes" && response.data[i].approved_for_sidewalk_seating === "no") {
         typeOfSeating.textContent = "Only roadway seating available"
         mainRestaurantNameDiv[i].append(typeOfSeating)
-        typeOfSeating.classList.add("seating-type");
+        typeOfSeating.classList.add("restaurant-data");
       } else {
         typeOfSeating.textContent = "Only sidewalk seating available"
         mainRestaurantNameDiv[i].append(typeOfSeating)
-        typeOfSeating.classList.add("seating-type");
+        typeOfSeating.classList.add("restaurant-data");
       }
     }
 
@@ -122,6 +133,7 @@ const getRestaurantData = async (borough) => {
   }
 }
 
+
 // User Borough Selection
 const userBorough = document.querySelector('#borough-list')
 userBorough.addEventListener('change', (e) => {
@@ -130,7 +142,7 @@ userBorough.addEventListener('change', (e) => {
   removeLastSelections()
 });
 
-// Remove last selections
+// Removing last borough selection
 const removeLastSelections = () => {
   // Removing Restaurants
   const removeRestaurants = document.querySelector('.restaurants-in-borough')
@@ -144,9 +156,4 @@ const removeLastSelections = () => {
     removeStats.removeChild(removeStats.lastChild)
   }
 
-  // Removing News Articles
-  const removeNews = document.querySelector('.covid-news')
-  while (removeNews.lastChild) {
-    removeNews.removeChild(removeNews.lastChild)
-  }
 }

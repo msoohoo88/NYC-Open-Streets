@@ -61,7 +61,7 @@ body {
   font-family: 'Hind Siliguri', sans-serif;
 }
 
-.business-address, .serves-alcohol, .seating-type {
+.restaurant-data {
   font-size: 4vw
 }
 
@@ -69,6 +69,7 @@ body {
   display: flex;
   flex-flow: column nowrap;
   align-items: stretch;
+  width: 100%;
 }
 
 .number-of-restaurants{
@@ -97,7 +98,7 @@ body {
   max-width: 100%;
 }
 
-@media only screen and (min-width: 600px) {
+@media only screen and (min-width: 800px) {
   .main-container {
     align-items: stretch;
   }
@@ -141,10 +142,32 @@ body {
     font-size: 1.4vw;
   }
 
-  .business-address, .serves-alcohol, .seating-type {
+  .restaurant-data {
     font-size: 1.5vw
   }
+
+  .number-of-restaurants {
+    width: 50%;
+    margin: 0 auto
+  }
+
+  .number-of-restaurants > div {
+    text-align: center;
+  }
+
   .number-of-restaurants > div > p{
     font-size: 1.4vw
+  }
+
+  .restaurants-in-borough{
+    display: flex;
+    flex-flow: row wrap;
+    align-items: stretch;
+    width: 100%;
+    justify-content: space-around;
+  }
+
+  .restaurants-in-borough > div{
+    width: 45%;
   }
 }
