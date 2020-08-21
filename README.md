@@ -145,3 +145,4 @@ const removeLastSelections = () => {
 
 ## Change Log
 Users will see a set of random restaurants and a set of random covid related articles
+Switched news api to use different parameters
