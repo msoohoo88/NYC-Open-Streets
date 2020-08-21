@@ -2,36 +2,13 @@ body {
   background-color: #f5f5f5;
 }
 
-.app-header {
-    position: relative;
-    text-align: center;
-  }
-
-.app-header > img {
-  max-width: 100%;
-}
-
-.webAppName {
-  position: absolute;
-  bottom: 40%;
-  /* Created with https://cssgradient.io/*/
-  background: linear-gradient(90deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0.7) 50%, rgba(255,255,255,0.1) 100%);
-  width: 100%;
-  font-size: 7vw;
-}
-
-.webAppName > p {
-  line-height: 5px;
-  padding-left: 10px;
+footer > div {
+  height: 10vw;
+  background-color: #BDBDBE;
+  text-align: center;
   font-family: 'Oswald', sans-serif;
-}
-
-.main-container {
-  display: flex;
-  flex-flow: column nowrap;
-  justify-content: space-evenly;
-  align-content: center;
-  align-items: center;
+  font-size: .7rem;
+  padding: 10px;
 }
 
 #user-filter-choice{
@@ -48,17 +25,43 @@ body {
   padding-left: 15px;
 }
 
-.restaurant-name {
-  font-size: 6vw;
+.app-header {
+    position: relative;
+    text-align: center;
+  }
+
+.app-header > img {
+  max-width: 100%;
 }
 
-.restaurants-in-borough > div {
-  background-color: rgba(224,222,222,0.3);
-  border-radius: 5px;
-  margin-bottom: 20px;
-  padding-left: 15px;
-  border: solid 1px;
-  font-family: 'Hind Siliguri', sans-serif;
+.main-container {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-evenly;
+  align-content: center;
+  align-items: center;
+}
+
+
+/* CSS for header */
+.webAppName {
+  position: absolute;
+  bottom: 40%;
+  /* Created with https://cssgradient.io/*/
+  background: linear-gradient(90deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0.7) 50%, rgba(255,255,255,0.1) 100%);
+  width: 100%;
+  font-size: 7vw;
+}
+
+.webAppName > p {
+  line-height: 5px;
+  padding-left: 10px;
+  font-family: 'Oswald', sans-serif;
+}
+
+/* CSS for restaurant data */
+.number-of-restaurants{
+  width: 100%;
 }
 
 .restaurant-data {
@@ -72,8 +75,8 @@ body {
   width: 100%;
 }
 
-.number-of-restaurants{
-  width: 100%;
+.restaurant-name {
+  font-size: 6vw;
 }
 
 .number-of-restaurants > div {
@@ -85,6 +88,16 @@ body {
   font-family: 'Hind Siliguri', sans-serif;
 }
 
+.restaurants-in-borough > div {
+  background-color: rgba(224,222,222,0.3);
+  border-radius: 5px;
+  margin-bottom: 20px;
+  padding-left: 15px;
+  border: solid 1px;
+  font-family: 'Hind Siliguri', sans-serif;
+}
+
+/* CSS for news section */
 .covid-news {
   display: flex;
   flex-flow: column nowrap;
@@ -98,13 +111,10 @@ body {
   max-width: 100%;
 }
 
-@media only screen and (min-width: 800px) {
-  .main-container {
-    align-items: stretch;
-  }
 
-  .user-filters {
-    align-items: center;
+@media only screen and (min-width: 800px) {
+  footer > div {
+    height: 5vw;
   }
 
   #borough-list {
@@ -116,10 +126,49 @@ body {
     margin-left: 30%;
   }
 
+  .main-container {
+    align-items: stretch;
+  }
+
+  .user-filters {
+    align-items: center;
+  }
+
+  /* CSS for restuarant data */
+  .number-of-restaurants {
+    width: 50%;
+    margin: 0 auto
+  }
+
+  .restaurant-data {
+    font-size: 1.5vw
+  }
+
+  .restaurants-in-borough{
+    display: flex;
+    flex-flow: row wrap;
+    align-items: stretch;
+    width: 100%;
+    justify-content: space-around;
+  }
+
   .restaurant-name {
     font-size: 2vw;
   }
 
+  .number-of-restaurants > div {
+    text-align: center;
+  }
+
+  .number-of-restaurants > div > p{
+    font-size: 1.4vw
+  }
+
+  .restaurants-in-borough > div{
+    width: 45%;
+  }
+
+  /* CSS for News Articles */
   .covid-news {
     display: flex;
     flex-flow: row;
@@ -131,43 +180,16 @@ body {
     flex-flow: column;
     align-items: center;
   }
-  
-  .covid-news > div > img {
-    max-width: 75%;
-  }
 
   .covid-news > div > a {
     display: inline-block;
     max-width: 75%;
     font-size: 1.4vw;
   }
-
-  .restaurant-data {
-    font-size: 1.5vw
+  
+  .covid-news > div > img {
+    max-width: 75%;
   }
 
-  .number-of-restaurants {
-    width: 50%;
-    margin: 0 auto
-  }
-
-  .number-of-restaurants > div {
-    text-align: center;
-  }
-
-  .number-of-restaurants > div > p{
-    font-size: 1.4vw
-  }
-
-  .restaurants-in-borough{
-    display: flex;
-    flex-flow: row wrap;
-    align-items: stretch;
-    width: 100%;
-    justify-content: space-around;
-  }
-
-  .restaurants-in-borough > div{
-    width: 45%;
-  }
 }
+
