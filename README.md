@@ -110,29 +110,38 @@ https://res.cloudinary.com/dmsgyhmxo/image/upload/v1597679422/Priority_Matrix_Pr
 | Component | Priority | Estimated Time | Time Invested | Actual Time |
 | --- | :---: |  :---: | :---: | :---: |
 | Setting up basic structure | M | 1.5hrs| 1hr | 1hr |
-| Setting up user filters | H | 2hrs| 2hrs |  |
-| Render resturants info - name and address| H | 3hrs| 8hrs |  |
-| Render resturants info - other info| H | 2.5hrs| 2.5hrs |  |
-| Render stats of restaurants with sidewalk dining| M | 1.5hrs| 2.5hrs |  |
-| Render stats of restaurants with roadway dining| M | 1.5hrs| .5hrs |  |
-| Render latest COVID-19 news | H | 3hrs| 2hrs |  |
-| Render latest COVID-19 stats | H | 2.5hrs|  |  |
-| CSS styling of rendered resturants info| L | 3hrs| 6.5hrs |  |
-| CSS styling of stats| L | 3hrs| 2hr |  |
-| CSS styling of news section | L | 3hrs| 2hrs |  |
-| CSS for desktop| L | 2hrs| 1hr |  |
-| Styling for header| L | 1.5hrs| 1hr |  |
-| Total | H | 30hrs|  |  |
+| Setting up user filters | H | 2hrs| 2hrs | 2hrs |
+| Render resturants info - name and address| H | 3hrs| 8hrs | 8hrs |
+| Render resturants info - other info| H | 2.5hrs| 2.5hrs | 2.5hrs |
+| Render stats of restaurants with sidewalk dining| M | 1.5hrs| 2.5hrs | 2.5hrs |
+| Render stats of restaurants with roadway dining| M | 1.5hrs| .5hrs | .5hrs |
+| Render latest COVID-19 news | H | 3hrs| 2hrs | 2hrs |
+| CSS styling of rendered resturants info| L | 3hrs| 6.5hrs | 6.5hrs |
+| CSS styling of stats| L | 3hrs| 2hrs | 2hrs |
+| CSS styling of news section | L | 3hrs| 2hrs | 2hrs |
+| CSS for desktop| L | 2hrs| 1hr | 1hr |
+| Styling for header| L | 1.5hrs| 1hr | 1hr |
+| Total | H | 30hrs| 31hrs | 31hrs |
 
 ## Code Snippet
 
-Use this section to include a brief code snippet of functionality that you are proud of and a brief description.  
+This snippet here is removing the users last selection. I wasn't as comfortable with event listeners prior to the project but after trying it out myself several time, I have more confidence in my ability to do so.
 
 ```
-function reverse(string) {
-	// here is the code to reverse a string of text
-}
+// Removing last borough selection
+const removeLastSelections = () => {
+  // Removing Restaurants
+  const removeRestaurants = document.querySelector('.restaurants-in-borough')
+  while (removeRestaurants.lastChild) {
+    removeRestaurants.removeChild(removeRestaurants.lastChild)
+  }
+
+  // Removing Stats
+  const removeStats = document.querySelector('.number-of-restaurants')
+  while (removeStats.lastChild) {
+    removeStats.removeChild(removeStats.lastChild)
+  }
 ```
 
 ## Change Log
-User will see a set of random restaurants
+Users will see a set of random restaurants and a set of random covid related articles
