@@ -1,6 +1,7 @@
 const restaurantURL = 'https://data.cityofnewyork.us/resource/pitm-atqc.json'
 const newsUrl = 'http://cors-anywhere.herokuapp.com/http://newsapi.org/v2/everything?apiKey=45bbd722e9ed4d88887103aa39f34a4f&q=covid-19'
 
+
 // Making the request to News API, appending to news section of HTML
 const getNewsArticles = async () => {
   try {
